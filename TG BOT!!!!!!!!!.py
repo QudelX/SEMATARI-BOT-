@@ -31,7 +31,6 @@ def load_font(size):
 
 
 def wrap_text(draw, text, font, max_width):
-    """Разбивает текст на строки, чтобы они помещались по ширине."""
     lines, line = [], ""
     for word in text.split():
         test = f"{line} {word}".strip()
@@ -47,7 +46,6 @@ def wrap_text(draw, text, font, max_width):
 
 
 def add_text(image_bytes, text):
-    """Рисует текст внизу картинки: белый с чёрной обводкой."""
     img = Image.open(io.BytesIO(image_bytes)).convert("RGB")
     draw = ImageDraw.Draw(img)
     width, height = img.size
